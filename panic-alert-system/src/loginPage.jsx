@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./LoginPage.css";
-import logo from "../assets/unnlogo.jpg";
-import logo from "../assets/sentinoalogo.png";
+import unn_banner from "../assets/unnlogo.jpg";
+import sentinoa_logo from "../assets/sentinoalogo.png";
 
 function LoginPage() {
     
@@ -16,47 +16,45 @@ function LoginPage() {
   };
 
   return (
-    
-    <div className="page">
-      <img src={banner} alt="unnlogo">
-      <img src={logo} alt="Logo" />  
-      
-    
-    <div className="page">
-      <div className="login-area">
-        <div className="lead">Login</div>
-        <div id="hint">Login to your account</div>
+  <div className="page">
+    <div className="login-area">
+      <img src={unn_banner} alt="unnlogo" />
+      <img src={sentinoa_logo} alt="Logo" />
 
-        <form onSubmit={handleSubmit}>
-          <div className="input-label">Username</div>
-          <input
-            name="username"
-            required
-            placeholder="Capitalized first and last names"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <br />
+      <div className="lead">Login</div>
+      <div id="hint">Login to your account</div>
 
-          <div className="input-label">Password</div>
-          <input
-            name="password"
-            type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+      <form onSubmit={handleSubmit}>
+        <div className="input-label">Username</div>
+        <input
+          name="username"
+          required
+          placeholder="Capitalized first and last names"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <br />
 
-          <br />
-          <button type="submit">
-            <div>Login</div>
-          </button>
-        </form>
+        <div className="input-label">Password</div>
+        <input
+          name="password"
+          type="password"
+          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        {error && <p className="error-text">{error}</p>}
-      </div>
+        <br />
+        <button type="submit">
+          <div>Login</div>
+        </button>
+      </form>
+
+      {error && <p className="error-text">{error}</p>}
     </div>
-  );
+  </div>
+);
+
 }
 
 export default LoginPage;
