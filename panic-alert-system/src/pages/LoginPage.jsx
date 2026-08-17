@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Shield, Mail, Lock, Eye, EyeOff, LogIn } from 'lucide-react';
+import { Mail, Lock, Eye, EyeOff, LogIn } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import unn_banner from "../assets/unnlogo.jpg";
 import sentinoa_logo from "../assets/sentinoalogo.png";
 
 export default function LoginPage() {
@@ -20,14 +19,14 @@ export default function LoginPage() {
         {/* Header */}
         <div className="bg-[#eef2ec] rounded-t-2xl px-6 pt-8 pb-4 text-center">
           <div className="flex justify-center mb-3">
-            <img src="sentinoa_logo" alt="Sentinoa Logo" className='w-12 h-12 rounded-x1 object-cover'/>
+            <img src={sentinoa_logo} alt="Sentinoa Logo" className="w-12 h-12 rounded-xl object-cover" />
           </div>
           <h1 className="text-2xl font-extrabold text-green-800 tracking-wide">SENTINOA</h1>
           <p className="text-xs text-slate-600 mt-1">UNN Security Device Portal</p>
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-b-2xl shadow-md px-6 py-8">
+        <div className="bg-white rounded-b-2xl shadow-md px-6 pt-8 pb-6">
           <div className="space-y-4">
             <Field
               label="School Email"
@@ -94,40 +93,33 @@ export default function LoginPage() {
               </Link>
             </p>
           </div>
-        </div>
 
-            <hr className="border-slate-200 my-2" />
+          <hr className="border-slate-200 my-4" />
 
           <p className="text-center text-xs text-slate-500">
-            Authorized use only.{' '}
-            <Link to="/request-access" className="text-green-800 font-semibold hover:underline">
-              Request access
-            </Link>
-          </p>
-
-          <p className="text-center text-xs text-slate-500 mt-2">
             Don't have an account?{' '}
             <Link to="/signup" className="text-green-800 font-semibold hover:underline">
               Sign up
             </Link>
           </p>
 
-        {/* Footer status pill */}
-        <div className="flex justify-center mt-6">
-          <span className="flex items-center gap-1.5 text-[11px] font-medium text-slate-300 bg-white/10 border border-white/10 rounded-full px-3 py-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-            SYSTEMS NOMINAL
-          </span>
+          {/* Footer status pill */}
+          <div className="flex justify-center mt-6">
+            <span className="flex items-center gap-1.5 text-[11px] font-medium text-slate-500 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+              SYSTEMS NOMINAL
+            </span>
+          </div>
+
+          {/* Footer links */}
+          <div className="flex justify-center gap-4 mt-3 text-xs text-slate-400">
+            <a href="#" className="hover:text-slate-600">Compliance</a>
+            <a href="#" className="hover:text-slate-600">Security Docs</a>
+            <a href="#" className="hover:text-slate-600">Support</a>
+          </div>
         </div>
 
-        {/* Footer links */}
-        <div className="flex justify-center gap-4 mt-3 text-xs text-slate-400">
-          <a href="#" className="hover:text-slate-200">Compliance</a>
-          <a href="#" className="hover:text-slate-200">Security Docs</a>
-          <a href="#" className="hover:text-slate-200">Support</a>
-        </div>
-
-        {/* Copyright */}
+        {/* Copyright*/}
         <div className="text-center mt-8 text-[11px] text-slate-500 leading-relaxed">
           <p>© 2024 SENTINOA IoT Systems. All rights reserved.</p>
           <div className="flex justify-center gap-3 mt-2">
@@ -159,6 +151,3 @@ function Field({ label, icon, placeholder, type, value, onChange }) {
     </div>
   );
 }
-
-
-
